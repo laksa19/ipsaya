@@ -4,18 +4,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="favicon.ico">
         <script>
-            fetch('http://ip-api.com/json?fields=query,country,isp')
+            fetch('https://api.db-ip.com/v2/free/self')
             .then(response => response.json())
             .then(data => {
-                document.getElementById("ip").innerHTML = data.query
-                document.getElementById("country").innerHTML = data.country
-                document.getElementById("isp").innerHTML = data.isp
-            });
+                document.getElementById("ip").innerHTML = data.ipAddress
+                document.getElementById("country").innerHTML = data.countryName
+            })
         </script>
     </head>
     <body>
         <div id="ip"></div>
         <div id="country"></div>
-        <div id="isp"></div>
     </body>
 </html>
