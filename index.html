@@ -8,10 +8,11 @@
             fetch('https://json.geoiplookup.io')
             .then(response => response.json())
             .then(data => {
-                document.getElementById("ip").innerHTML = "IP: " + data.ip
-                document.getElementById("country").innerHTML = "Country: " + data.country_name
-                document.getElementById("isp").innerHTML = "ISP: " + data.isp
+                document.getElementById("ip").innerHTML = data.ip
+                document.getElementById("country").innerHTML = data.country_name
+                document.getElementById("isp").innerHTML = data.isp
             });
+
         </script>
         <style>
             body {
@@ -20,8 +21,19 @@
         </style>
     </head>
     <body>
-        <div id="ip"></div>
-        <div id="country"></div>
-        <div id="isp"></div>
+        <table>
+            <tr>
+                <td>IP</td>
+                <td>: <span id="ip"></span></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>: <span id="country"></span></td>
+            </tr>
+            <tr>
+                <td>ISP</td>
+                <td>: <span id="isp"></span></td>
+            </tr>
+        </table>
     </body>
 </html>
