@@ -8,9 +8,9 @@
             fetch('https://json.geoiplookup.io')
             .then(response => response.json())
             .then(data => {
-                document.getElementById("ip").innerHTML = data.ip
-                document.getElementById("country").innerHTML = data.country_name
-                document.getElementById("isp").innerHTML = data.isp
+                document.getElementById("ip").innerHTML = "IP: " + data.ip
+                document.getElementById("country").innerHTML = "Country: " + data.country_name
+                document.getElementById("isp").innerHTML = "ISP: : + data.isp
             });
         </script>
         <style>
