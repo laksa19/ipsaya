@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>IP Saya</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="favicon.ico">
+        <script>
+            fetch('http://ip-api.com/json?fields=query,country,isp')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ip").innerHTML = data.query
+                document.getElementById("country").innerHTML = data.country
+                document.getElementById("isp").innerHTML = data.isp
+            });
+        </script>
+    </head>
+    <body>
+        <div id="ip"></div>
+        <div id="country"></div>
+        <div id="isp"></div>
+    </body>
+</html>
